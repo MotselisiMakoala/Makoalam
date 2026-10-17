@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Venture into Lesotho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+body {
+    margin: 0;
+    background-color: FloralWhite;
+    color: darkblue;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color .3s;
+}
+.navbar {
+    background-color: skyblue;
+}
+.navbar-brand {
+    color: Moccasin !important;
+    font-weight: bold;
+    letter-spacing: .3px;
+    font-size: 1.3rem;
+    white-space: normal;
+}
+.nav-link {
+    color: White !important;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: Moccasin !important;
+}
+.navbar-toggler {
+    border-color: Moccasin;
+}
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+h1,
+h2,
+h3 {
+    color: skyblue;
+}
+.section-title {
+    border-left: 6px solid DarkSalmon;
+    padding-left: 14px;
+    margin-bottom: 28px;
+    font-weight: bold;
+}
+.btn-adventure {
+    background-color: lightpink;
+    color: darkblue;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+.btn-adventure:hover {
+    background-color: darkslateblue;
+    color: White;
+}
+.page-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: Honeydew;
+    padding: 55px 6% 35px;
+    border-bottom: 6px solid DarkSalmon;
+}
+.page-banner h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+.page-banner p {
+    max-width: 380px;
+    margin: 0;
+    text-align: right;
+}
+.content-section {
+    padding: 55px 0;
+}
+.soft-section {
+    background-color: Honeydew;
+}
+#modeBtn {
+    background-color: darkslategray;
+    color: White;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+@media (min-width: 992px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 240px;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        padding: 30px 22px;
+        overflow-y: auto;
+    }
+    .side-nav .navbar-collapse {
+        flex-direction: column;
+        align-items: stretch;
+        flex-grow: 1;
+    }
+    .side-nav .navbar-nav {
+        flex-direction: column;
+        margin: 25px 0;
+    }
+    .side-nav .navbar-nav .nav-link {
+        margin: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .45);
+    }
+    #modeBtn {
+        margin-top: auto;
+    }
+    .page {
+        margin-left: 240px;
+    }
+}
+.site-footer {
+    background-color: darkslateblue;
+    color: White;
+    padding: 40px 6% 15px;
+    margin-top: 50px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 35px;
+}
+.site-footer h2 {
+    color: lightcyan;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+.site-footer h3 {
+    color: lightcyan;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.site-footer p {
+    line-height: 1.7;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-bottom: 15px;
+}
+.footer-links h3 {
+    width: 100%;
+    margin-bottom: 4px;
+}
+.footer-links a {
+    color: White;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: Moccasin;
+}
+.footer-button {
+    display: inline-block;
+    background-color: lightgoldenrodyellow;
+    color: DarkGreen;
+    padding: 10px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-button:hover {
+    background-color: lightcyan;
+    color: darkblue;
+}
+.footer-bottom {
+    border-top: 1px solid lightblue;
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+}
+@media (max-width: 991px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        text-align: center;
+    }
+}
+.destination-row {
+    align-items: center;
+    margin-bottom: 38px;
+    background-color: White;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(46, 89, 57, .10);
+}
+.destination-row img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+.destination-text {
+    padding: 25px;
+}
+.destination-text h3 {
+    margin: 0;
+}
+.filter-btn {
+    background-color: White;
+    color: darkblue;
+    border: 2px solid LightGreen;
+    border-radius: 25px;
+    padding: 6px 18px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+.filter-btn:hover {
+    border-color: DarkSalmon;
+}
+.filter-btn.active {
+    background-color: darkslateblue;
+    border-color: darkslateblue;
+    color: White;
+}
+.btn-outline-dark {
+    color: darkslateblue;
+    border: 2px solid darkslateblue;
+    border-radius: 25px;
+    font-weight: bold;
+}
+.btn-outline-dark:hover {
+    background-color: darkslateblue;
+    color: White;
+}
+.badge-type {
+    background-color: skyblue;
+    color: darkblue;
+}
+.altitude-tag {
+    color: darkslateblue;
+    font-weight: bold;
+}
+.form-label {
+    font-weight: bold;
+}
+.form-control {
+    border: 1px solid LightGreen;
+    padding: 11px;
+}
+.controls {
+    position: sticky;
+    top: 20px;
+}
+@media (max-width: 768px) {
+    .destination-row img {
+        height: 230px;
+    }
+}
+.info-box {
+    background-color: White;
+    border-left: 6px solid DarkSalmon;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 15px rgba(46, 89, 57, .08);
+}
+.info-box ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+.table thead th {
+    background-color: darkslateblue;
+    color: White;
+    padding: 14px;
+}
+.table td,
+.table th {
+    padding: 14px;
+    background-color: White;
+    color: darkblue;
+}
+.accordion-item {
+    background-color: White;
+    border: 1px solid LightGreen;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.accordion-button {
+    background-color: White;
+    color: darkblue;
+    font-weight: bold;
+}
+.accordion-button:not(.collapsed) {
+    background-color: lightpink;
+    color: darkblue;
+    box-shadow: none;
+}
+body.dark {
+    background-color: #222222;
+    color: White;
+}
+body.dark nav,
+body.dark footer {
+    background-color: #111111;
+    color: White;
+}
+body.dark h1,
+body.dark h2,
+body.dark p {
+    color: White;
+}
+body.dark .page-banner,
+body.dark .soft-section,
+body.dark .destination-row,
+body.dark .info-box,
+body.dark .accordion-item,
+body.dark .accordion-button,
+body.dark .table td,
+body.dark .table th {
+    background-color: #333333;
+    color: White;
+}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark side-nav">
+    <a class="navbar-brand" href="home.html">Venture into Lesotho</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+        <div class="navbar-nav">
+            <a class="nav-link" href="home.html">Home</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link active" href="services.html">Services</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+        <button id="modeBtn" type="button">Dark / Light Mode</button>
+    </div>
+</nav>
+
+<div class="page">
+
+<header class="page-banner">
+    <h1>Our Services</h1>
+    <p>Destinations to explore, places to stay and things to do.</p>
+</header>
+
+<main>
+<section class="content-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <h2 class="section-title">Destinations</h2>
+        <div class="row g-5">
+            <div class="col-lg-3">
+                <div class="controls">
+                    <label for="searchBox" class="form-label">Search</label>
+                    <input id="searchBox" type="search" class="form-control mb-4" placeholder="Try snow, caves or lodge">
+                    <p class="form-label mb-2">Filter by type</p>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="filter-btn active" data-type="All">All</button>
+                        <button class="filter-btn" data-type="Stay">Stay</button>
+                        <button class="filter-btn" data-type="Adventure">Adventure</button>
+                        <button class="filter-btn" data-type="Nature">Nature</button>
+                        <button class="filter-btn" data-type="Culture">Culture</button>
+                    </div>
+                    <p class="form-label mb-2">Sort by</p>
+                    <div class="dropdown">
+                        <button id="sortButton" class="btn btn-outline-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Name A to Z</button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#" data-sort="name">Name A to Z</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-sort="height">Highest first</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" data-sort="price">Lowest price first</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div id="destinationList"></div>
+                <div id="noResults" class="alert alert-warning d-none" role="status">No destination matches your search. Try a different word.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section soft-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-4">
+                <h2 class="section-title">Where to Stay</h2>
+                <div class="alert alert-info mb-0" role="note">These are sample prices for a student project. Always confirm real prices with the place.</div>
+            </div>
+            <div class="col-lg-8 table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <caption class="visually-hidden">Comparison of places to stay</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Place</th>
+                            <th scope="col">Best for</th>
+                            <th scope="col">Height</th>
+                            <th scope="col">Sample price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Khutsong Lodge</th>
+                            <td>Rest and slow evenings</td>
+                            <td>About 1,600 m</td>
+                            <td>M850 per person per night</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Afriski Resort</th>
+                            <td>Snow sports and mountain biking</td>
+                            <td>About 3,050 m</td>
+                            <td>M1,800 per person per night</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Tsehlanyane Park</th>
+                            <td>Hiking, horse riding and camping</td>
+                            <td>About 2,300 m</td>
+                            <td>M600 per person per night</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5">
+            <aside class="col-lg-4" aria-label="Planning tip">
+                <div class="info-box">
+                    <h3>Ready to go?</h3>
+                    <p>Choose a place, see the cost and send a booking request.</p>
+                    <a href="contact.html" class="btn-adventure">Book Now</a>
+                </div>
+            </aside>
+            <article class="col-lg-8">
+                <h2 class="section-title">Things to Do</h2>
+                <div class="accordion" id="activities">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#activities1" aria-expanded="true" aria-controls="activities1">Ski and snowboard at Afriski</button>
+                        </h3>
+                        <div id="activities1" class="accordion-collapse collapse show" data-bs-parent="#activities">
+                            <div class="accordion-body">Glide down real snow high in the Maluti Mountains. Lessons and rental gear are usually available. The season is short, so check dates before you travel.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#activities2" aria-expanded="false" aria-controls="activities2">Drive Sani Pass</button>
+                        </h3>
+                        <div id="activities2" class="accordion-collapse collapse" data-bs-parent="#activities">
+                            <div class="accordion-body">Take a guided 4x4 tour up the famous gravel road. Stop at the top to warm up and look out over the mountains.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#activities3" aria-expanded="false" aria-controls="activities3">Hike and ride in Tsehlanyane</button>
+                        </h3>
+                        <div id="activities3" class="accordion-collapse collapse" data-bs-parent="#activities">
+                            <div class="accordion-body">Walk forest trails and gorges, or ride a horse through the valleys. Start early and wear layers.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#activities4" aria-expanded="false" aria-controls="activities4">Visit the Kome Caves</button>
+                        </h3>
+                        <div id="activities4" class="accordion-collapse collapse" data-bs-parent="#activities">
+                            <div class="accordion-body">Meet a local guide and learn how families built their homes into the sandstone. Ask before you take photos of people.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#activities5" aria-expanded="false" aria-controls="activities5">Relax at Metolong Dam</button>
+                        </h3>
+                        <div id="activities5" class="accordion-collapse collapse" data-bs-parent="#activities">
+                            <div class="accordion-body">Bring a picnic, watch the birds and wait for the sunset. It is a gentle day out.</div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <h2>Venture into Lesotho</h2>
+            <p><strong>Let the Altitude steal your heart.</strong></p>
+            <p>Discover mountain views, Basotho culture and special places across the Kingdom in the Sky.</p>
+        </div>
+        <div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Destinations</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <h3>Your Next Adventure</h3>
+            <p>From the peaceful beauty of Tsehlanyane to the snowy slopes of Afriski, find a place that makes your trip unforgettable.</p>
+            <a href="services.html" class="footer-button">Explore Destinations</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Venture into Lesotho. Discover the Kingdom in the Sky.</p>
+    </div>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

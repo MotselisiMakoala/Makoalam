@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home | Venture into Lesotho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+body {
+    margin: 0;
+    background-color: FloralWhite;
+    color: darkblue;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color .3s;
+}
+.navbar {
+    background-color: skyblue;
+}
+.navbar-brand {
+    color: Moccasin !important;
+    font-weight: bold;
+    letter-spacing: .3px;
+    font-size: 1.3rem;
+    white-space: normal;
+}
+.nav-link {
+    color: White !important;
+}
+.nav-link:hover,
+.nav-link.active {
+    color: Moccasin !important;
+}
+.navbar-toggler {
+    border-color: Moccasin;
+}
+.navbar-toggler-icon {
+    filter: brightness(0) invert(1);
+}
+h1,
+h2,
+h3 {
+    color: skyblue;
+}
+.section-title {
+    border-left: 6px solid DarkSalmon;
+    padding-left: 14px;
+    margin-bottom: 28px;
+    font-weight: bold;
+}
+.btn-adventure {
+    background-color: lightpink;
+    color: darkblue;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color .2s ease;
+}
+.btn-adventure:hover {
+    background-color: darkslateblue;
+    color: White;
+}
+.page-banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    background-color: Honeydew;
+    padding: 55px 6% 35px;
+    border-bottom: 6px solid DarkSalmon;
+}
+.page-banner h1 {
+    margin: 0;
+    font-weight: bold;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+}
+.page-banner p {
+    max-width: 380px;
+    margin: 0;
+    text-align: right;
+}
+.content-section {
+    padding: 55px 0;
+}
+.soft-section {
+    background-color: Honeydew;
+}
+#modeBtn {
+    background-color: darkslategray;
+    color: White;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+@media (min-width: 992px) {
+    .side-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 240px;
+        flex-direction: column;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        padding: 30px 22px;
+        overflow-y: auto;
+    }
+    .side-nav .navbar-collapse {
+        flex-direction: column;
+        align-items: stretch;
+        flex-grow: 1;
+    }
+    .side-nav .navbar-nav {
+        flex-direction: column;
+        margin: 25px 0;
+    }
+    .side-nav .navbar-nav .nav-link {
+        margin: 0;
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .45);
+    }
+    #modeBtn {
+        margin-top: auto;
+    }
+    .page {
+        margin-left: 240px;
+    }
+}
+.site-footer {
+    background-color: darkslateblue;
+    color: White;
+    padding: 40px 6% 15px;
+    margin-top: 50px;
+}
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 35px;
+}
+.site-footer h2 {
+    color: lightcyan;
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+.site-footer h3 {
+    color: lightcyan;
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+.site-footer p {
+    line-height: 1.7;
+}
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-bottom: 15px;
+}
+.footer-links h3 {
+    width: 100%;
+    margin-bottom: 4px;
+}
+.footer-links a {
+    color: White;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    color: Moccasin;
+}
+.footer-button {
+    display: inline-block;
+    background-color: lightgoldenrodyellow;
+    color: DarkGreen;
+    padding: 10px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.footer-button:hover {
+    background-color: lightcyan;
+    color: darkblue;
+}
+.footer-bottom {
+    border-top: 1px solid lightblue;
+    text-align: right;
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 14px;
+}
+@media (max-width: 991px) {
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        text-align: center;
+    }
+}
+.info-box {
+    background-color: White;
+    border-left: 6px solid DarkSalmon;
+    border-radius: 12px;
+    padding: 25px;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(46, 89, 57, .08);
+}
+.info-box ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+}
+.table thead th {
+    background-color: darkslateblue;
+    color: White;
+    padding: 14px;
+}
+.table td,
+.table th {
+    padding: 14px;
+    background-color: White;
+    color: darkblue;
+}
+.accordion-item {
+    background-color: White;
+    border: 1px solid LightGreen;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.accordion-button {
+    background-color: White;
+    color: darkblue;
+    font-weight: bold;
+}
+.accordion-button:not(.collapsed) {
+    background-color: lightpink;
+    color: darkblue;
+    box-shadow: none;
+}
+body.dark {
+    background-color: #222222;
+    color: White;
+}
+body.dark nav,
+body.dark footer {
+    background-color: #111111;
+    color: White;
+}
+body.dark h1,
+body.dark h2,
+body.dark p {
+    color: White;
+}
+body.dark .page-banner,
+body.dark .soft-section,
+body.dark .info-box,
+body.dark .accordion-item,
+body.dark .accordion-button,
+body.dark .table td,
+body.dark .table th {
+    background-color: #333333;
+    color: White;
+}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark side-nav">
+    <a class="navbar-brand" href="home.html">Venture into Lesotho</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+        <div class="navbar-nav">
+            <a class="nav-link" href="home.html">Home</a>
+            <a class="nav-link active" href="about.html">About</a>
+            <a class="nav-link" href="services.html">Services</a>
+            <a class="nav-link" href="gallery.html">Gallery</a>
+            <a class="nav-link" href="contact.html">Contact</a>
+        </div>
+        <button id="modeBtn" type="button">Dark / Light Mode</button>
+    </div>
+</nav>
+
+<div class="page">
+
+<header class="page-banner">
+    <h1>About Us</h1>
+    <p>Who we are and why Lesotho is worth the climb.</p>
+</header>
+
+<main>
+<section class="content-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5">
+            <aside class="col-lg-4" aria-label="Quick facts">
+                <div class="info-box">
+                    <h3>Lesotho in short</h3>
+                    <ul>
+                        <li>Lowest point: about 1,400 m</li>
+                        <li>Highest point: 3,482 m</li>
+                        <li>Snow season: usually June to August</li>
+                        <li>Money: the loti (M)</li>
+                    </ul>
+                </div>
+            </aside>
+            <article class="col-lg-8">
+                <h2 class="section-title">Welcome to the Kingdom in the Sky</h2>
+                <p>Venture into Lesotho is a travel guide built around six places: Khutsong Lodge, Afriski Resort, Metolong Dam, Kome Caves, Sani Pass and Tsehlanyane Park. Each one shows a different side of the country.</p>
+                <p>Lesotho is called the Kingdom in the Sky because the whole country sits high above sea level. Even its lowest point is higher than the highest point of many countries. The air is thin and clear, the nights are cold and the views go on forever.</p>
+                <p>Our goal is simple: help you choose a place, see what it costs and send a booking request, all in one website.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="content-section soft-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-3">
+                <h2 class="section-title">Pick Your Season</h2>
+            </div>
+            <div class="col-lg-9 table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <caption class="visually-hidden">Seasons in Lesotho</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Season</th>
+                            <th scope="col">Months</th>
+                            <th scope="col">What to expect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Summer</th>
+                            <td>December to February</td>
+                            <td>Green hills, warm days and afternoon rain.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Autumn</th>
+                            <td>March to May</td>
+                            <td>Clear skies and golden grass.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Winter</th>
+                            <td>June to August</td>
+                            <td>Snow and skiing in the highlands.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Spring</th>
+                            <td>September to November</td>
+                            <td>Flowers and fewer visitors.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5 flex-lg-row-reverse">
+            <div class="col-lg-4">
+                <h2 class="section-title">Before You Go</h2>
+            </div>
+            <div class="col-lg-8">
+                <div class="accordion" id="faq">
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What should I pack?</button>
+                        </h3>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faq">
+                            <div class="accordion-body">Warm layers, because nights are cold all year. Add sunscreen, sunglasses, sturdy walking shoes and a rain jacket for afternoon storms.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How do I get around?</button>
+                        </h3>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faq">
+                            <div class="accordion-body">Main roads are fine for normal cars. Mountain roads such as Sani Pass need a 4x4 or a guided tour.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What money do I use?</button>
+                        </h3>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faq">
+                            <div class="accordion-body">The local money is the loti (M). Carry some cash for small villages and check prices before you travel.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h3 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Is the weather safe to plan for?</button>
+                        </h3>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faq">
+                            <div class="accordion-body">Weather changes fast in the mountains. Check conditions in the morning, tell someone your route and keep a warm layer in your bag.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div>
+            <h2>Venture into Lesotho</h2>
+            <p><strong>Let the Altitude steal your heart.</strong></p>
+            <p>Discover mountain views, Basotho culture and special places across the Kingdom in the Sky.</p>
+        </div>
+        <div>
+            <div class="footer-links">
+                <h3>Explore</h3>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="services.html">Destinations</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <h3>Your Next Adventure</h3>
+            <p>From the peaceful beauty of Tsehlanyane to the snowy slopes of Afriski, find a place that makes your trip unforgettable.</p>
+            <a href="services.html" class="footer-button">Explore Destinations</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Venture into Lesotho. Discover the Kingdom in the Sky.</p>
+    </div>
+</footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
